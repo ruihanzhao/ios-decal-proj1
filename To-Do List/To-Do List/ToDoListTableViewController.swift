@@ -43,7 +43,6 @@ class ToDoListTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToAddReminder" {
             let addVC = segue.destinationViewController as! AddReminderViewController
-//            addVC.tasks = self.tasks
         }
 
     }

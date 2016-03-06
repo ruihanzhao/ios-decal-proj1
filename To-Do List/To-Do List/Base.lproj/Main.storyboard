@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--To Do List Table View Controller-->
@@ -89,7 +90,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="84D-kC-PC7" firstAttribute="leading" secondItem="4cm-ex-FvM" secondAttribute="leadingMargin" constant="-14" id="H7O-Rw-QTW"/>
                             <constraint firstItem="84D-kC-PC7" firstAttribute="centerX" secondItem="4cm-ex-FvM" secondAttribute="centerX" id="LIo-Tq-wvs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="84D-kC-PC7" secondAttribute="trailing" constant="-11" id="cgq-0A-Rkc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xPg-1L-YcC">

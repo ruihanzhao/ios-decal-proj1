@@ -31,8 +31,8 @@ class ToDoListTableViewController: UITableViewController {
     func addTask(text : String) {
         if (text != "") {
             print("text being added to tasks: \(text)")
-        }
             tasks.addItem(text)
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -86,12 +86,32 @@ class ToDoListTableViewController: UITableViewController {
         if (cell.completed == true) {
             cell.accessoryType = .Checkmark
         }
+        if (!cell.completed) {
+            cell.accessoryType = .None
+        }
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //        tableView.deselectRowAtIndexPath(indexPath, animated: false)
         let cell = tasks.stringDict[tasks.tasks[indexPath.row]]!
 //        let cell = tableView.dequeueReusableCellWithIdentifier("ToDoCell", forIndexPath: indexPath) as! ToDoCell
+        if (cell.completed) {
+            var finalIndex = 0
+            var index = 0
+            for item in completed {
+                if item == tasks.tasks[indexPath.row] {
+                    finalIndex = index
+                    break
+                }
+                else {
+                    index+=1
+                }
+            }
+            completed.removeAtIndex(finalIndex)
+            cell.completed=false
+            tableView.reloadData()
+            return;
+        }
         if (!cell.completed) {
             completed.append(tasks.tasks[indexPath.row])
             getDate(cell);
